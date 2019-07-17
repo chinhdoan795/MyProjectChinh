@@ -1,0 +1,55 @@
+    // Create a light bulb in stack memory using default constructor
+    LightBulb bulb1;
+
+    // Create a light bulb in heap memory using default constructor
+    LightBulb* bulb2 = new LightBulb();
+
+    // Create a light bulb in stack memory using 1-parameter constructor
+    LightBulb bulb3(ON);
+
+    // Create a light bulb in heap memory using 1-parameter constructor
+    LightBulb* bulb4 = new LightBulb(OFF);
+
+    cout << " Address of bulb2 " << bulb2 << end;
+    cout << " Address of bulb4 " << bulb4 << end;
+
+    // Declare bulb object in heap
+    cout << " delete bulb2 ":
+    delete bulb2;
+    cout << " delete bulb4 ":
+    delete bulb4;
+
+    return 0;
+
+
+ 
+    public:
+        // Default constructor (no parameter)
+        LightBulb();
+        // Constructor with 1 parameter
+        LightBulb(bool light);
+        // Destructor
+        virtual ~LightBulb();
+
+    private:
+        bool _light;
+
+LightBulb::LightBulb()
+{
+    cout << " A light is born" << end;
+}
+
+// Implementation of parameter constructor
+LightBulb::LightBulb(bool light)
+{
+    _light = light;
+    cout << " A light is born and it's ";
+
+    if (_light) cout << "ON" << end;
+    else cout << "OFF" << end;
+}
+
+LightBulb::~LightBulb()
+{
+    cout << " A light is gone " << end;
+}
